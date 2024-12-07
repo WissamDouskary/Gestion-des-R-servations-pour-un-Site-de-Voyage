@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
          @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
          @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
@@ -26,13 +25,11 @@
          font-weight: 600;
          font-style: normal;
     }
-    </style>
-
+    </style>    
     <title>Travel Tales</title>
 </head>
 <body class=" text-white">
-<div class="bg-[url('./img/background.jpg')] bg-cover bg-no-repeat bg-center h-screen">
-    <header class=" flex justify-between px-24 pt-8 items-center">
+    <header class="bg-[url('./img/background.jpg')] bg-cover bg-no-repeat flex justify-between px-24 py-6 items-center">
         <a href="/index.php"><h2 id="title" class="text-4xl font-bold text-white">Travel Tales</h2></a>
         <nav>
             <ul class="text-white flex gap-8">
@@ -41,10 +38,6 @@
             </ul>
         </nav>
     </header>
-    <section class="ml-24 mt-32">
-        <h2 class="text-8xl">Travel <br>EveryWhere</h2>
-        <a href="#"><button class="bg-[#81BFDA] border py-2 px-6 mt-10 rounded-full text-black font-bold hover:bg-transparent hover:border hover:text-white">Reservation</button></a>
-    </section>
-    </div>
+    
 </body>
 </html>
