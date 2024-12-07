@@ -28,16 +28,30 @@
     </style>    
     <title>Travel Tales</title>
 </head>
-<body class=" text-white">
-    <header class="bg-[url('./img/background.jpg')] bg-cover bg-no-repeat flex justify-between px-24 py-6 items-center">
-        <a href="/index.php"><h2 id="title" class="text-4xl font-bold text-white">Travel Tales</h2></a>
-        <nav>
-            <ul class="text-white flex gap-8">
-                <li><a href="/index.php">Home</a></li>
-                <li><a href="/reservation.php">Reservation</a></li>
+<body class=" text-black">
+    <header class="bg-[#082a82] bg-cover bg-no-repeat flex justify-between px-24 py-8 items-center">
+    <a href="/Gestion-des-R-servations-pour-un-Site-de-Voyage/index.php"><h2 id="title" class="text-4xl font-bold text-white">Travel Tales</h2></a>
+    <nav>
+        <ul class="text-white flex gap-8">
+                <li><a href="/Gestion-des-R-servations-pour-un-Site-de-Voyage/index.php">Home</a></li>
+                <li><a href="/Gestion-des-R-servations-pour-un-Site-de-Voyage/reservation.php">Reservation</a></li>
             </ul>
         </nav>
     </header>
+   
+        
+<form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     
+</form>
+
+<?php 
+
+
+?>
+
+    
+
+
+
 </body>
 </html>
