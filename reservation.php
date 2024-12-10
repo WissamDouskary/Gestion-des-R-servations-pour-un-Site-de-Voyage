@@ -46,7 +46,7 @@
     
     <!-- add activities -->
   <div id="addActivitiesform" class="hidden justify-center items-center fixed inset-0 bg-black bg-opacity-30">
-     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="flex flex-col justify-center items-center pt-5 w-[500px] bg-white rounded-md py-8">
+     <form method="POST" action="" class="flex flex-col justify-center items-center pt-5 w-[500px] bg-white rounded-md py-8">
     <div>
     <label>titre :</label>
     <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="text" name="titre" required>
@@ -84,46 +84,6 @@
 </form>
 </div>
 
-
-<!-- add client form -->
- <!-- <div class="flex justify-center items-center fixed inset-0 bg-black bg-opacity-30">
-<form method="POST" action="/Gestion-des-R-servations-pour-un-Site-de-Voyage/add.php" class="flex flex-col justify-center items-center pt-5 w-[500px] bg-white rounded-md py-8">
-    <div>
-    <label>nom :</label>
-    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="text" name="nom" required>
-    </div>
-    <div>
-    <label>prenom :</label>
-    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="text" name="prenom" required>
-    </div>
-    <div>
-    <label>email :</label>
-    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="text" name="email" required>
-    </div>
-    <div>
-    <label>telephone :</label>
-    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="number" name="telephone" required>
-    </div>
-    <div>
-    <label>adress :</label>
-    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="text" name="adress" required>
-    </div>
-    <div>
-    <label>date :</label>
-    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="date" name="date" required>
-    </div>
-    <div>
-    <div>
-    <a href="/Gestion-des-R-servations-pour-un-Site-de-Voyage/add.php"><input style="width: 200px;" class="cursor-pointer my-4 text-sm rounded-lg dark:bg-[#082a82] p-2.5 text-white" type="button" value="See all Clients"></a>
-    <input style="width: 200px;" class="cursor-pointer my-4 text-sm rounded-lg dark:bg-[#082a82] p-2.5 text-white" type="submit">
-    </div>
-</form>
-</div> -->
-
-
-
-
-
 <?php 
 
 include 'C:\xampp\htdocs\Gestion-des-R-servations-pour-un-Site-de-Voyage\conn.php';
@@ -150,7 +110,7 @@ $activitesql = "INSERT INTO activite (titre, description, destination, prix, dat
 
         if($excutedata){
             echo "<script>alert('data insered success')</script>";
-        echo '<script type="text/javascript">
+            echo '<script type="text/javascript">
             if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
             }
@@ -158,25 +118,28 @@ $activitesql = "INSERT INTO activite (titre, description, destination, prix, dat
         }else{
             echo 'error found :' . mysqli_error($conn);
         }
+    
 
     mysqli_stmt_close($activitestmt);
+    
     
 }
 
 $selectallfromactivite = "SELECT * FROM activite";
-$result = mysqli_query($conn, $selectallfromactivite);
+$applicate = mysqli_query($conn, $selectallfromactivite);
 
-if ($result) {
+if ($applicate) {
         echo '<h2 class="ml-5 text-2xl text-blue-600 font-bold "> All avalliable Reservations :</h2>';
-    while ($row = mysqli_fetch_assoc($result)) {
+    while ($place = mysqli_fetch_assoc($applicate)) {
         echo '<div class="space-y-4 p-6 bg-gray-50 rounded-lg shadow-md mt-4 mx-6">';
-         echo '<h2 class="text-xl font-semibold text-gray-800">'. $row['titre'] .'</h2>';
-         echo '<h2 class="text-lg text-gray-600">'. $row['description'] .'</h2>';
-         echo '<h2 class="text-lg text-gray-600">To '. $row['destination'] .'</h2>';
-         echo '<h2 class="text-lg text-gray-600">'. $row['prix'] .' $ </h2>';
-         echo '<h2 class="text-lg text-gray-600"> de '. $row['date_debut'] .' a '. $row['date_fin'] . '</h2>';
-         echo '<h2 class="text-lg text-gray-600">'. $row['place_disponible'] .' place</h2>';
-         echo '<button class="text-lg bg-[#082a82] text-white py-2 px-6 rounded-xl ">Reserve</button>';
+         echo '<h2 class="text-xl font-semibold text-gray-800">'. $place['titre'] .'</h2>';
+         echo '<h2 class="text-lg text-gray-600">'. $place['description'] .'</h2>';
+         echo '<h2 class="text-lg text-gray-600">To '. $place['destination'] .'</h2>';
+         echo '<h2 class="text-lg text-gray-600">'. $place['prix'] .' $ </h2>';
+         echo '<h2 class="text-lg text-gray-600"> de '. $place['date_debut'] .' a '. $place['date_fin'] . '</h2>';
+         echo '<h2 class="text-lg text-gray-600">'. $place['place_disponible'] .' place</h2>';
+         echo '<a class="mt-6" href="add.php?activiteID=' . $place['id_activite'] . '"><button class="text-lg bg-[#082a82] text-white py-2 px-6 rounded-xl mt-6" id="reservBtn">Reserve</button></a>';
+         echo '<a class="mt-6" href="deleteRes.php?delID=' . $place['id_activite'] . '"><button class="text-lg bg-red-500 text-white py-2 px-6 rounded-xl mt-6 ml-6" id="delResBtn">Delete</button></a>';
         echo '</div>';
     }
 } else {
