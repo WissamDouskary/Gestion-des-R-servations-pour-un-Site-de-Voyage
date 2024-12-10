@@ -38,42 +38,153 @@
             </ul>
         </nav>
     </header>
-   
 
-<form method="POST" action="/Gestion-des-R-servations-pour-un-Site-de-Voyage/add.php" class="flex flex-col justify-center items-center border">
+    <div class="flex justify-end mr-6 mt-4">
+        <button class="py-4 px-8 bg-blue-600 rounded-xl" onclick="document.getElementById('addActivitiesform').classList.remove('hidden');document.getElementById('addActivitiesform').classList.add('flex')">Add activite</button>
+    </div>
+        
+    
+    <!-- add activities -->
+  <div id="addActivitiesform" class="hidden justify-center items-center fixed inset-0 bg-black bg-opacity-30">
+     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="flex flex-col justify-center items-center pt-5 w-[500px] bg-white rounded-md py-8">
+    <div>
+    <label>titre :</label>
+    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="text" name="titre" required>
+    </div>
+    <div>
+    <label>description :</label>
+    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="text" name="description" required>
+    </div>
+    <div>
+    <label>destination :</label>
+    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="text" name="destination" required>
+    </div>
+    <div>
+    <label>prix :</label>
+    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="number" name="prix" required>
+    </div>
+    <div>
+    <label>date debut :</label>
+    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="date" name="datedebut" required>
+    </div>
+    <div>
+    <label>date fin :</label>
+    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="date" name="datefin" required>
+    </div>
+    <div>
+    <label>place disponible :</label>
+    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="number" name="placedisponible" required>
+    </div>
+    <div>
+    <div>
+    <input style="width: 200px;" class="cursor-pointer my-4 text-sm rounded-lg dark:bg-[#082a82] p-2.5 text-white" name="submit" type="submit">
+    <a><input style="width: 200px;" class="cursor-pointer my-4 text-sm rounded-lg dark:bg-gray-400 p-2.5 text-white" type="button" value="Cancel" onclick="document.getElementById('addActivitiesform').classList.remove('flex');document.getElementById('addActivitiesform').classList.add('hidden')"></a>
+    </div>
+    </div>
+</form>
+</div>
+
+
+<!-- add client form -->
+ <!-- <div class="flex justify-center items-center fixed inset-0 bg-black bg-opacity-30">
+<form method="POST" action="/Gestion-des-R-servations-pour-un-Site-de-Voyage/add.php" class="flex flex-col justify-center items-center pt-5 w-[500px] bg-white rounded-md py-8">
     <div>
     <label>nom :</label>
-    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="text" name="nom" require>
+    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="text" name="nom" required>
     </div>
     <div>
     <label>prenom :</label>
-    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="text" name="prenom" require>
+    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="text" name="prenom" required>
     </div>
     <div>
     <label>email :</label>
-    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="text" name="email" require>
+    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="text" name="email" required>
     </div>
     <div>
     <label>telephone :</label>
-    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="number" name="telephone" require>
+    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="number" name="telephone" required>
     </div>
     <div>
     <label>adress :</label>
-    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="text" name="adress" require>
+    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="text" name="adress" required>
     </div>
     <div>
     <label>date :</label>
-    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="date" name="date" require>
+    <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="date" name="date" required>
     </div>
     <div>
-        <div>
+    <div>
     <a href="/Gestion-des-R-servations-pour-un-Site-de-Voyage/add.php"><input style="width: 200px;" class="cursor-pointer my-4 text-sm rounded-lg dark:bg-[#082a82] p-2.5 text-white" type="button" value="See all Clients"></a>
     <input style="width: 200px;" class="cursor-pointer my-4 text-sm rounded-lg dark:bg-[#082a82] p-2.5 text-white" type="submit">
     </div>
 </form>
+</div> -->
 
+
+
+
+
+<?php 
+
+include 'C:\xampp\htdocs\Gestion-des-R-servations-pour-un-Site-de-Voyage\conn.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+//activite table :
+$titre = $_POST['titre'];
+$description = $_POST['description'];
+$destination = $_POST['destination'];
+$prix = $_POST['prix'];
+$datedebut = $_POST['datedebut'];
+$datefin = $_POST['datefin'];
+$placedisponible = $_POST['placedisponible'];
+
+
+$activitesql = "INSERT INTO activite (titre, description, destination, prix, date_debut, date_fin, place_disponible)
+                VALUES (?, ?, ?, ?, ?, ?, ?)";
+// prepare activite table : 
+        $activitestmt = mysqli_prepare($conn, $activitesql);
+
+        mysqli_stmt_bind_param($activitestmt, "sssssss", $titre, $description, $destination, $prix, $datedebut, $datefin, $placedisponible);
+
+        $excutedata = mysqli_stmt_execute($activitestmt);
+
+        if($excutedata){
+            echo "<script>alert('data insered success')</script>";
+        echo '<script type="text/javascript">
+            if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+            }
+        </script>';
+        }else{
+            echo 'error found :' . mysqli_error($conn);
+        }
+
+    mysqli_stmt_close($activitestmt);
     
+}
 
+$selectallfromactivite = "SELECT * FROM activite";
+$result = mysqli_query($conn, $selectallfromactivite);
+
+if ($result) {
+        echo '<h2 class="ml-5 text-2xl text-blue-600 font-bold "> All avalliable Reservations :</h2>';
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<div class="space-y-4 p-6 bg-gray-50 rounded-lg shadow-md mt-4 mx-6">';
+         echo '<h2 class="text-xl font-semibold text-gray-800">'. $row['titre'] .'</h2>';
+         echo '<h2 class="text-lg text-gray-600">'. $row['description'] .'</h2>';
+         echo '<h2 class="text-lg text-gray-600">To '. $row['destination'] .'</h2>';
+         echo '<h2 class="text-lg text-gray-600">'. $row['prix'] .' $ </h2>';
+         echo '<h2 class="text-lg text-gray-600"> de '. $row['date_debut'] .' a '. $row['date_fin'] . '</h2>';
+         echo '<h2 class="text-lg text-gray-600">'. $row['place_disponible'] .' place</h2>';
+         echo '<button class="text-lg bg-[#082a82] text-white py-2 px-6 rounded-xl ">Reserve</button>';
+        echo '</div>';
+    }
+} else {
+    echo 'Error fetching data: ' . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>
 
 
 </body>

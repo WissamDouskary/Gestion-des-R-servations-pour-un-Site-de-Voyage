@@ -1,0 +1,88 @@
+<mxfile host="65bd71144e">
+    <diagram id="ecHQN2NDaeJd-Gsui1o2" name="Page-1">
+        <mxGraphModel dx="754" dy="563" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="client" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="130" width="40" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="admin&lt;br&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="280" width="40" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="50" width="490" height="490" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="&#10;Vérifier les offres&#10;&#10;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="100" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="&#10;Effectuer une réservation&#10;&#10;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="330" y="100" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="&#10;Compléter le formulaire&#10;&#10;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="510" y="100" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="&#10;Ajouter des activités&#10;&#10;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="240" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="&#10;Gérer les informations de réservation&#10;&#10;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="360" width="180" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="Authentification" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="300" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="" style="endArrow=none;html=1;entryX=0.043;entryY=0.784;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="3" target="12">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="360" y="320" as="sourcePoint"/>
+                        <mxPoint x="410" y="270" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="90" y="160"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="23" value="extend" style="endArrow=classic;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="13" target="12">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="360" y="320" as="sourcePoint"/>
+                        <mxPoint x="410" y="270" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="include" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="13" target="14">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="360" y="320" as="sourcePoint"/>
+                        <mxPoint x="410" y="270" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="25" value="" style="endArrow=none;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="10" target="15">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="360" y="320" as="sourcePoint"/>
+                        <mxPoint x="410" y="270" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="10" target="16">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="360" y="320" as="sourcePoint"/>
+                        <mxPoint x="410" y="270" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="27" value="include" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="15" target="18">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="360" y="320" as="sourcePoint"/>
+                        <mxPoint x="410" y="270" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="380" y="290"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="include" style="endArrow=classic;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="16">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="360" y="320" as="sourcePoint"/>
+                        <mxPoint x="460" y="340" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="30" value="Systeme de gestion de reservastion" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="60" width="280" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
