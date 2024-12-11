@@ -35,7 +35,8 @@
     <nav>
         <ul class="text-white flex gap-8">
                 <li><a href="/Gestion-des-R-servations-pour-un-Site-de-Voyage/index.php">Home</a></li>
-                <li><a href="/Gestion-des-R-servations-pour-un-Site-de-Voyage/reservation.php">Reservation</a></li>
+                <li><a href="/Gestion-des-R-servations-pour-un-Site-de-Voyage/reservation.php">Activities</a></li>
+                <li><a href="/Gestion-des-R-servations-pour-un-Site-de-Voyage/addactivitie.php">Reserve Activities</a></li>
             </ul>
         </nav>
 </header>
@@ -72,16 +73,21 @@
     <input style="width: 400px;" class="rounded-xl text-black text-sm  block p-2.5 dark:bg-gray-200" type="date" name="date" required>
     </div>
     <div>
-    <input style="width: 200px;" class="cursor-pointer my-4 text-sm rounded-lg dark:bg-[#082a82] p-2.5 text-white" type="submit" name="submit">
-    <input style="width: 200px;" class="cursor-pointer my-4 text-sm rounded-lg dark:bg-gray-300 hover:dark:bg-gray-400 duration-200 p-2.5 text-white" type="button" value="Cancel" onclick="document.getElementById('addclientform').classList.remove('flex');document.getElementById('addclientform').classList.add('hidden')">
+    <a href="addactivitie.php"><input style="width: 200px;" class="cursor-pointer my-4 text-sm rounded-lg dark:bg-[#082a82] p-2.5 text-white" type="submit" name="submit"></a>  
+  <input style="width: 200px;" class="cursor-pointer my-4 text-sm rounded-lg dark:bg-gray-300 hover:dark:bg-gray-400 duration-200 p-2.5 text-white" type="button" value="Cancel" onclick="document.getElementById('addclientform').classList.remove('flex');document.getElementById('addclientform').classList.add('hidden')">
     </div>
 </form>
 </div>
 
 <?php
 include 'C:\xampp\htdocs\Gestion-des-R-servations-pour-un-Site-de-Voyage\conn.php';
+if(isset($_GET['activiteID'])){
+    $id = $_GET['activiteID'];
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+
+    
 
     //client table : 
     $nom = $_POST['nom'];
@@ -91,31 +97,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     $adress = $_POST['adress'];
     $date = $_POST['date'];
 
-
-    if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Please enter a valid email!";
-    } else {
-        $clientsql = "INSERT INTO client (nom, prenom, email, telephone, adresse, date_naissance) 
+    $clientsql = "INSERT INTO client (nom, prenom, email, telephone, adresse, date_naissance) 
                 VALUES (?, ?, ?, ?, ?, ?)";
 
-        // prepare client table : 
-        $clientstmt = mysqli_prepare($conn, $clientsql);
+    // prepare client table : 
+    $clientstmt = mysqli_prepare($conn, $clientsql);
         
-        mysqli_stmt_bind_param($clientstmt, "ssssss", $nom, $prenom, $email, $telephone, $adress, $date);
+    mysqli_stmt_bind_param($clientstmt, "ssssss", $nom, $prenom, $email, $telephone, $adress, $date);
 
-        if (mysqli_stmt_execute($clientstmt)) {
-            echo "<script>the client added success!<!script>";
-            header("Location: /Gestion-des-R-servations-pour-un-Site-de-Voyage/add.php");
-            exit();
-        } else {
-            echo 'Error: ' . mysqli_error($conn);
-        }
-        
-        mysqli_stmt_close($clientstmt);
+    if (mysqli_stmt_execute($clientstmt)) {
+        echo "<script>the client added success!<!script>";
+        header("Location: /Gestion-des-R-servations-pour-un-Site-de-Voyage/add.php");
+        exit();
+    } else {
+        echo 'Error: ' . mysqli_error($conn);
     }
+        
+    mysqli_stmt_close($clientstmt);
+    
 }
 $selectallfromclients = "SELECT * FROM client";
 $applicate = mysqli_query($conn, $selectallfromclients);
+
+
 
 if ($applicate) {
     echo "<h3 class='m-4 text-blue-500 text-3xl font-bold'>All Clients:</h3>";
@@ -142,21 +146,21 @@ if ($applicate) {
         echo "<td class='py-4 px-6 text-sm text-gray-600'>" . $space['telephone'] . "</td>";
         echo "<td class='py-4 px-6 text-sm text-gray-600'>" . $space['adresse'] . "</td>";
         echo "<td class='py-4 px-6 text-sm text-gray-600'>" . $space['date_naissance'] . "</td>";
-        echo "<td class='py-4 px-6 text-sm text-gray-600'>    <a href='edit.php?editid=". $space['id_client'] ."'><input style='width: 40px;' class='cursor-pointer text-sm rounded-lg dark:bg-green-500 py-1.3 px-2 text-white' type='button' value='edit'></td></a>";
+        echo "<td class='py-4 px-6 text-sm text-gray-600'>    <a href='edit.php?editid=". $space['id_client'] ."'><input style='width: 40px;' class='cursor-pointer text-sm rounded-lg dark:bg-green-500 py-1.3 px-2 text-white' type='button' id='editclientbtn' value='edit'></td></a>";
         echo "<td class='py-4 px-6 text-sm text-gray-600'>    <a href='delete.php?deleteid=". $space['id_client'] ."'><input style='width: 50px;' class='cursor-pointer text-sm rounded-lg dark:bg-red-500 py-1.2 px-1.6 text-white' type='button' value='delete'></td></a>";
-
+        echo "<td class='py-4 px-6 text-sm text-gray-600'>    <a href='addactivitie.php?thisclientID=". $space['id_client'] ."&thisactivitieid=". $id ."'><input style='width: 50px;' class='cursor-pointer text-sm rounded-lg dark:bg-green-500 py-1.2 px-1.6 text-white' type='button' value='Reserve This activitie'></td></a>";
         
         echo "</tr>";
     }
     echo "</tbody>";
     echo "</table>";
     echo "</div>";
+    
 } else {
     echo 'Error fetching data: ' . mysqli_error($conn);
 }
 
 mysqli_close($conn);
 ?>
-
 </body>
 </html>
