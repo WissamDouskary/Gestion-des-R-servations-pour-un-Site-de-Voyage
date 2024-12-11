@@ -40,13 +40,14 @@
         <nav>
             <ul class="text-white flex gap-8">
                 <li><a href="/Gestion-des-R-servations-pour-un-Site-de-Voyage/index.php">Home</a></li>
-                <li><a href="/Gestion-des-R-servations-pour-un-Site-de-Voyage/reservation.php">Reservation</a></li>
+                <li><a href="/Gestion-des-R-servations-pour-un-Site-de-Voyage/reservation.php">Activities</a></li>
+                <li><a href="/Gestion-des-R-servations-pour-un-Site-de-Voyage/addactivitie.php">Reserve Activities</a></li>
             </ul>
         </nav>
     </header>
     <section class="ml-24 mt-32">
         <h2 class="text-8xl animate__animated animate__fadeIn">Travel <br>EveryWhere</h2>
-        <a href="#"><button class="animate__animated animate__fadeIn bg-[#81BFDA] border py-2 px-6 mt-10 rounded-full text-black font-bold hover:bg-transparent hover:border hover:text-white duration-300">Reservation</button></a>
+        <a href="reservation.php"><button class="animate__animated animate__fadeIn bg-[#81BFDA] border py-2 px-6 mt-10 rounded-full text-black font-bold hover:bg-transparent hover:border hover:text-white duration-300">Reserve Activities Now</button></a>
     </section>
     </div>
 

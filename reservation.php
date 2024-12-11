@@ -34,7 +34,8 @@
     <nav>
         <ul class="text-white flex gap-8">
                 <li><a href="/Gestion-des-R-servations-pour-un-Site-de-Voyage/index.php">Home</a></li>
-                <li><a href="/Gestion-des-R-servations-pour-un-Site-de-Voyage/reservation.php">Reservation</a></li>
+                <li><a href="/Gestion-des-R-servations-pour-un-Site-de-Voyage/reservation.php">Activities</a></li>
+                <li><a href="/Gestion-des-R-servations-pour-un-Site-de-Voyage/addactivitie.php">Reserve Activities</a></li>
             </ul>
         </nav>
     </header>
