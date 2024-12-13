@@ -1,4 +1,4 @@
-##### Instructions pour configurer l’environnement et exécuter le projet
+###### Instructions pour configurer l’environnement et exécuter le projet
 ### Contexte du projet
 L’objectif est de développer un site web de réservation pour une agence de voyages. Ce site permet de gérer les clients, d’afficher les offres d’activités disponibles (vols, hôtels, circuits touristiques, etc.), et de permettre aux clients de réserver et de personnaliser leurs choix.
 Fonctionnalités principales
