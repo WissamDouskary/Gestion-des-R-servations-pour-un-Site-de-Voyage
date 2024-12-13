@@ -131,18 +131,22 @@ $applicate = mysqli_query($conn, $selectallfromactivite);
 
 if ($applicate) {
         echo '<h2 class="ml-5 text-2xl text-blue-600 font-bold "> All avalliable Reservations :</h2>';
+        echo '<div class="grid grid-cols-4 ">';
     while ($place = mysqli_fetch_assoc($applicate)) {
-        echo '<div class="space-y-4 p-6 bg-gray-50 rounded-lg shadow-md mt-4 mx-6">';
-         echo '<h2 class="text-xl font-semibold text-gray-800">'. $place['titre'] .'</h2>';
-         echo '<h2 class="text-lg text-gray-600">'. $place['description'] .'</h2>';
-         echo '<h2 class="text-lg text-gray-600">To '. $place['destination'] .'</h2>';
-         echo '<h2 class="text-lg text-gray-600">'. $place['prix'] .' $ </h2>';
-         echo '<h2 class="text-lg text-gray-600"> de '. $place['date_debut'] .' a '. $place['date_fin'] . '</h2>';
-         echo '<h2 class="text-lg text-gray-600">'. $place['place_disponible'] .' place</h2>';
+        
+        echo '<div class="space-y-4 p-6 bg-gray-50 rounded-lg shadow-md mt-4 mx-6 w-[346px]">';
+         echo '<h2 class="text-xl font-semibold text-gray-800"> Title : '. $place['titre'] .'</h2>';
+         echo '<h2 class="text-lg text-gray-600">place : '. $place['description'] .'</h2>';
+         echo '<h2 class="text-lg text-gray-600">destination : To '. $place['destination'] .'</h2>';
+         echo '<h2 class="text-lg text-gray-600"> Start By : '. $place['prix'] .' $ </h2>';
+         echo '<h2 class="text-lg text-gray-600"> date : de '. $place['date_debut'] .' a '. $place['date_fin'] . '</h2>';
+         echo '<h2 class="text-lg text-gray-600"> places Numbers : '. $place['place_disponible'] .' place</h2>';
          echo '<a class="mt-6" href="add.php?activiteID=' . $place['id_activite'] . '"><button class="text-lg bg-[#082a82] text-white py-2 px-6 rounded-xl mt-6" id="reservBtn">Reserve</button></a>';
          echo '<a class="mt-6" href="deleteRes.php?delID=' . $place['id_activite'] . '"><button class="text-lg bg-red-500 text-white py-2 px-6 rounded-xl mt-6 ml-6" id="delResBtn">Delete</button></a>';
         echo '</div>';
+        
     }
+    echo '</div>';
 } else {
     echo 'Error fetching data: ' . mysqli_error($conn);
 }
