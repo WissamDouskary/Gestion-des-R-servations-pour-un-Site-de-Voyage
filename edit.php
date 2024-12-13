@@ -72,7 +72,7 @@ if (isset($_POST['submit'])) {
 
     if ($sqlclientquery && $sqlreservequery) {
         echo '<script>alert("data edited succes")</script>';
-        header('location: add.php');
+        header('location: reservation.php');
         exit();
     } else {
         echo "Error updating client: " . mysqli_error($conn);

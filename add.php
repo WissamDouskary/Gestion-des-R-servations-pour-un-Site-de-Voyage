@@ -135,6 +135,7 @@ if ($applicate) {
     echo "<th class=' py-3 px-6 text-left text-sm font-medium text-gray-600'>Date of Birth</th>";
     echo "<th class=' py-3 px-6 text-left text-sm font-medium text-gray-600'></th>";
     echo "<th class=' py-3 px-6 text-left text-sm font-medium text-gray-600'></th>";
+    echo "<th class=' py-3 px-6 text-left text-sm font-medium text-gray-600'></th>";
     echo "</tr>";
     echo "</thead>";
     
@@ -146,7 +147,8 @@ if ($applicate) {
         echo "<td class='py-4 px-6 text-sm text-gray-600'>" . $space['telephone'] . "</td>";
         echo "<td class='py-4 px-6 text-sm text-gray-600'>" . $space['adresse'] . "</td>";
         echo "<td class='py-4 px-6 text-sm text-gray-600'>" . $space['date_naissance'] . "</td>";
-        echo "<td class='py-4 px-6 text-sm text-gray-600'>    <a href='addactivitie.php?thisclientID=". $space['id_client'] ."&thisactivitieid=". $id ."'><input style='width: 60px;' class='cursor-pointer text-sm rounded-lg dark:bg-green-500 py-1.2 px-1.6 text-white' type='button' value='Reserve'></td></a>";
+        echo "<td class='py-4 px-6 text-sm text-gray-600'>    <a href='addactivitie.php?thisclientID=". $space['id_client'] ."&thisactivitieid=". $id ."'><input style='width: 60px;' class='cursor-pointer text-sm rounded-lg dark:bg-blue-500 py-1.2 px-1.6 text-white' type='button' value='Reserve'></td></a>";
+        echo "<td class='py-4 px-6 text-sm text-gray-600'>    <a href='edit.php?editid=". $space['id_client'] ."'><input style='width: 60px;' class='cursor-pointer text-sm rounded-lg dark:bg-green-500 py-1.2 px-1.6 text-white' type='button' value='Edit'></td></a>";
         echo "<td class='py-4 px-6 text-sm text-gray-600'>    <a href='deleteclient.php?thisclientID=". $space['id_client'] ."'><input style='width: 60px;' class='cursor-pointer text-sm rounded-lg dark:bg-red-500 py-1.2 px-1.6 text-white' type='button' value='Delete'></td></a>";
         echo "</tr>";
     }

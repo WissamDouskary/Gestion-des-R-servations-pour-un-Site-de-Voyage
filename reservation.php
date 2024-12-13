@@ -142,7 +142,7 @@ if ($applicate) {
          echo '<h2 class="text-lg text-gray-600"> date : de '. $place['date_debut'] .' a '. $place['date_fin'] . '</h2>';
          echo '<h2 class="text-lg text-gray-600"> places Numbers : '. $place['place_disponible'] .' place</h2>';
          echo '<a class="mt-6" href="add.php?activiteID=' . $place['id_activite'] . '"><button class="text-lg bg-[#082a82] text-white py-2 px-6 rounded-xl mt-6" id="reservBtn">Reserve</button></a>';
-         echo '<a class="mt-6" href="deleteRes.php?delID=' . $place['id_activite'] . '"><button class="text-lg bg-red-500 text-white py-2 px-6 rounded-xl mt-6 ml-6" id="delResBtn">Delete</button></a>';
+        //  echo '<a class="mt-6" href="deleteRes.php?delID=' . $place['id_activite'] . '"><button class="text-lg bg-red-500 text-white py-2 px-6 rounded-xl mt-6 ml-6" id="delResBtn">Delete</button></a>';
         echo '</div>';
         
     }
