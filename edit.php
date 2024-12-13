@@ -61,12 +61,16 @@ if (isset($_POST['submit'])) {
     $date = $_POST['date'];
 
 
-    $sql = "UPDATE `client` 
-            SET nom = '$nom', prenom = '$prenom', email = '$email', telephone = '$telephone', adresse = '$adress', date_naissance = '$date' 
-            WHERE id_client = $id";
+        $sqlclient = "UPDATE `client` 
+                    SET nom = '$nom', prenom = '$prenom', email = '$email', telephone = '$telephone', adresse = '$adress', date_naissance = '$date' 
+                        WHERE id_client = $id";
+        $sqlclientquery = mysqli_query($conn, $sqlclient);
+        $sqlreserve = "UPDATE `reservation` 
+                    SET nom = '$nom', prenom = '$prenom', email = '$email', telephone = '$telephone', adresse = '$adress', date_naissance = '$date' 
+                    WHERE id_client = $id";
+        $sqlreservequery = mysqli_query($conn, $sqlclient);
 
-
-    if (mysqli_query($conn, $sql)) {
+    if ($sqlclientquery && $sqlreservequery) {
         echo '<script>alert("data edited succes")</script>';
         header('location: add.php');
         exit();
