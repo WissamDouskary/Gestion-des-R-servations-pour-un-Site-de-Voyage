@@ -51,10 +51,10 @@ if (isset($_GET['thisclientID']) && isset($_GET['thisactivitieid'])) {
     $clientid = $_GET['thisclientID'];
     $activiteid = $_GET['thisactivitieid'];
 
-    $checkClientSql = "SELECT id_client FROM client WHERE id_client = '$clientid'";
+    $checkClientSql = "SELECT * FROM client WHERE id_client = '$clientid'";
     $checkClientResult = mysqli_query($conn, $checkClientSql);
 
-    $sql = "INSERT INTO reservation (id_client, id_activite, date_reservation, status) 
+    $sql = "INSERT INTO reservation (id_client, id_activite, date_reservation, status)
                 VALUES ('$clientid', '$activiteid', CURDATE(), 'en attent')";
 
         $result = mysqli_query($conn, $sql);
