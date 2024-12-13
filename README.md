@@ -39,7 +39,7 @@ ________________________________________
 ## Instructions pour l’exécution du projet
 1.	Démarrez XAMPP et activez Apache et MySQL.
 2.	Placez le dossier de votre projet dans le répertoire htdocs de XAMPP.
-3.	Accédez au site via http://localhost/<nom_du_projet>/.
+3.	Accédez au site via http://localhost/Gestion-des-R-servations-pour-un-Site-de-Voyage/.
 4.	Naviguez entre les pages : 
 o	Accueil : Présentation du site.
 o	Activités : Gestion des activités.
